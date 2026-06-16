@@ -12,25 +12,25 @@
   "id": "jabasso",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "https://drive.google.com/file/d/1yKzMqsaEYDtNqT9qG3Z4ak7ahb8mIr5P/view?usp=drive_linkg",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icon-192.png",
+      "src": "ttps://drive.google.com/file/d/1yKzMqsaEYDtNqT9qG3Z4ak7ahb8mIr5P/view?usp=drive_linkpng",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/icon-512.png",
+      "src": "https://drive.google.com/file/d/1cd3aMqMASRev4jrXK19basfl6bnhaGY0/view?usp=drive_link",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icon-512.png",
+      "src": "https://drive.google.com/file/d/1cd3aMqMASRev4jrXK19basfl6bnhaGY0/view?usp=drive_link",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
