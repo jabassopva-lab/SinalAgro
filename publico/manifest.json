@@ -1,13 +1,12 @@
 {
-  "background_color": "#ffffff",
+  "name": "Sinalização de Segurança do Trabalho Agro",
+  "short_name": "Sinal Agro",
   "description": "Portfólio de Comunicação Visual para Segurança do Trabalho no setor Agropecuário e Industrial - NR31 e NR26.",
   "dir": "ltr",
-  "display": "standalone",
-  "name": "Sinalização de Segurança do Trabalho Agro",
-  "orientation": "any",
-  "scope": "/",
-  "short_name": "Sinal Agro",
   "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
   "theme_color": "#0B3C24",
   "id": "jabasso",
   "icons": [
