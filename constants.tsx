@@ -1,16 +1,15 @@
-
 export const APP_CONFIG = {
   "storeName": "Sinalização de Segurança",
   "whatsappNumber": "5566992442998",
-  "logoUrl": "https://drive.google.com/thumbnail?id=1dxajRoRnAfTFosW2diNVM_ZbFmE2yO3J&sz=w1000",
+  "logoUrl": "https://drive.google.com/thumbnail?id=1KzcwazQGfNqn-DFEt1Vk5irGY9tB17jr&sz=w1000",
   "pixKey": "0a656405-1919-44b5-8439-71cc8364bce2",
   "pixQrCodeUrl": "https://drive.google.com/thumbnail?id=1Atbef9LAGqK3Kwq2T2QF_xs4p8CfI4WC&sz=w1000",
   "subscriptionPrice": "199,00",
   "subscriptionMonthlyPrice": "19,90",
   "pdfCatalogUrl": "https://drive.google.com/file/d/1T-fC801xSe2iZa9mFTZDIjInwa0JYiyc/view?usp=drive_link",
   "heroTitle": "SINALIZAÇÃO DE SEGURANÇA DO TRABALHO",
-  "adminLockHidden": true,
-  "buildId": "1767375308848",
+  "adminLockHidden": false,
+  "buildId": "1783622404583",
   "allowedCepPrefixes": [
     "78850"
   ],
