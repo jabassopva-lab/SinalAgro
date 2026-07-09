@@ -2,6 +2,7 @@
   "name": "Sinalização de Segurança do Trabalho Agro",
   "short_name": "Sinal Agro",
   "description": "Portfólio de Comunicação Visual para Segurança do Trabalho no setor Agropecuário e Industrial - NR31 e NR26.",
+  "lang": "pt-BR",
   "dir": "ltr",
   "start_url": "/",
   "display": "standalone",
