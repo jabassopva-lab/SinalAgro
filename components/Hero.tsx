@@ -48,12 +48,12 @@ const Hero: React.FC<HeroProps> = ({ title, onTitleChange, isAdminMode }) => {
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
           
           {/* Top Indicator Badge */}
-          <div className="inline-flex items-center gap-2 bg-emerald-50/70 border border-emerald-200/50 px-4 py-2 rounded-full shadow-sm mb-6">
-            <span className="relative flex h-2 w-2">
+          <div className="inline-flex items-center gap-2 bg-emerald-50/80 border border-emerald-200/60 px-5 py-2.5 rounded-full shadow-sm mb-6">
+            <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-teal opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-teal"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-teal"></span>
             </span>
-            <span className="text-[10px] font-black text-brand-teal uppercase tracking-[0.2em] font-display">
+            <span className="text-[12px] sm:text-[13px] font-black text-brand-teal uppercase tracking-[0.2em] font-display">
               Sinalização Técnica Agro • Portfólio de Conformidade NR-31
             </span>
           </div>
