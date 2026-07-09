@@ -49,7 +49,16 @@ export const checkTablesConnection = async () => {
 };
 
 const handleSupabaseError = (error: any, context: string) => {
-    if (error.code === 'PGRST205' || (error.message && error.message.includes('Could not find the table'))) {
+    const isTableMissing = 
+        error.code === 'PGRST205' || 
+        error.code === '42P01' || 
+        (error.message && (
+            error.message.includes('Could not find the table') || 
+            error.message.includes('does not exist') || 
+            error.message.includes('relation')
+        ));
+
+    if (isTableMissing) {
         console.error(`🚀 ERRO: Tabela não encontrada em [${context}].`);
         window.dispatchEvent(new CustomEvent('supabase_table_missing', { detail: { context } }));
     } else {
