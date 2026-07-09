@@ -73,22 +73,22 @@ const Hero: React.FC<HeroProps> = ({ title, onTitleChange, isAdminMode }) => {
           </p>
 
           {/* Quick Agro Pillars lists */}
-          <div className="mt-8 flex flex-wrap justify-center gap-3 font-display text-[11px] font-black uppercase tracking-wider text-slate-700">
-              <span className="flex items-center gap-2 bg-slate-50 border border-slate-200/60 px-4 py-2 rounded-xl shadow-xs">
-                  <span className="text-sm">🌾</span>
-                  <span>Silos & Armazenamento</span>
+          <div className="mt-8 grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-center gap-2 sm:gap-3 font-display text-[10px] sm:text-[11px] font-black uppercase tracking-wider text-slate-700 w-full max-w-2xl mx-auto">
+              <span className="flex items-center justify-center gap-1.5 sm:gap-2 bg-slate-50 border border-slate-200/60 px-2.5 py-2 sm:px-4 sm:py-2 rounded-xl shadow-xs text-center hover:bg-slate-100 transition-colors duration-200">
+                  <span className="text-xs sm:text-sm">🌾</span>
+                  <span className="truncate">Silos & Armazenamento</span>
               </span>
-              <span className="flex items-center gap-2 bg-slate-50 border border-slate-200/60 px-4 py-2 rounded-xl shadow-xs">
-                  <span className="text-sm">🚜</span>
-                  <span>Maquinários e Frotas</span>
+              <span className="flex items-center justify-center gap-1.5 sm:gap-2 bg-slate-50 border border-slate-200/60 px-2.5 py-2 sm:px-4 sm:py-2 rounded-xl shadow-xs text-center hover:bg-slate-100 transition-colors duration-200">
+                  <span className="text-xs sm:text-sm">🚜</span>
+                  <span className="truncate">Maquinários e Frotas</span>
               </span>
-              <span className="flex items-center gap-2 bg-slate-50 border border-slate-200/60 px-4 py-2 rounded-xl shadow-xs">
-                  <span className="text-sm">⚡</span>
-                  <span>Subestações e Elétrica</span>
+              <span className="flex items-center justify-center gap-1.5 sm:gap-2 bg-slate-50 border border-slate-200/60 px-2.5 py-2 sm:px-4 sm:py-2 rounded-xl shadow-xs text-center hover:bg-slate-100 transition-colors duration-200">
+                  <span className="text-xs sm:text-sm">⚡</span>
+                  <span className="truncate">Subestações e Elétrica</span>
               </span>
-              <span className="flex items-center gap-2 bg-slate-50 border border-slate-200/60 px-4 py-2 rounded-xl shadow-xs">
-                  <span className="text-sm">🛡️</span>
-                  <span>Área de Defensivos</span>
+              <span className="flex items-center justify-center gap-1.5 sm:gap-2 bg-slate-50 border border-slate-200/60 px-2.5 py-2 sm:px-4 sm:py-2 rounded-xl shadow-xs text-center hover:bg-slate-100 transition-colors duration-200">
+                  <span className="text-xs sm:text-sm">🛡️</span>
+                  <span className="truncate">Área de Defensivos</span>
               </span>
           </div>
 
