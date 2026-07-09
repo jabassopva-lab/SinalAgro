@@ -49,18 +49,24 @@ export const checkTablesConnection = async () => {
 };
 
 const handleSupabaseError = (error: any, context: string) => {
-    const isTableMissing = 
-        error.code === 'PGRST205' || 
-        error.code === '42P01' || 
-        (error.message && (
-            error.message.includes('Could not find the table') || 
-            error.message.includes('does not exist') || 
-            error.message.includes('relation')
+    const errorMessage = error?.message || '';
+    const errorCode = error?.code || '';
+
+    const isTableOrPermissionError = 
+        errorCode === 'PGRST205' || 
+        errorCode === '42P01' || 
+        errorCode === '42501' || 
+        (errorMessage && (
+            errorMessage.includes('Could not find the table') || 
+            errorMessage.includes('does not exist') || 
+            errorMessage.includes('relation') ||
+            errorMessage.includes('permission denied') ||
+            errorMessage.includes('row-level security')
         ));
 
-    if (isTableMissing) {
-        console.error(`🚀 ERRO: Tabela não encontrada em [${context}].`);
-        window.dispatchEvent(new CustomEvent('supabase_table_missing', { detail: { context } }));
+    if (isTableOrPermissionError) {
+        console.error(`🚀 ERRO: Tabela ou permissão ausente no Supabase em [${context}].`);
+        window.dispatchEvent(new CustomEvent('supabase_table_missing', { detail: { context, error } }));
     } else {
         console.error(`SUPABASE ERROR [${context}]:`, error);
     }

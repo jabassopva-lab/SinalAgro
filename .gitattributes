@@ -1,0 +1,14 @@
+# Garante que imagens e outros assets sejam tratados estritamente como arquivos binários,
+# impedindo que o Git tente converter as quebras de linha (CRLF/LF) e corrompa os arquivos.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
