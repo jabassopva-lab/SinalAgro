@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { checkTablesConnection } from '../supabaseClient';
 
-const SQL_FIX_CODE = `-- SCRIPT DE CONFIGURAÇÃO ACERTAMED
+const SQL_FIX_CODE = `-- SCRIPT DE CONFIGURAÇÃO SINAL AGRO
 -- Execute este código no SQL Editor do Supabase
 
 -- 1. Tabelas Principais
@@ -170,7 +170,7 @@ const SupabaseSetupModal: React.FC<SupabaseSetupModalProps> = ({ isOpen, onClose
         </div>
         
         <div className="p-4 bg-slate-100 border-t border-slate-200 text-center">
-            <p className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Acertamed • Gerenciamento Industrial</p>
+            <p className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Sinal Agro • Gerenciamento Industrial</p>
         </div>
       </div>
     </div>

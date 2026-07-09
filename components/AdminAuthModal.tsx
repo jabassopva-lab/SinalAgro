@@ -71,7 +71,7 @@ const AdminAuthModal: React.FC<AdminAuthModalProps> = ({ isOpen, onClose, onConf
             </button>
             
             <p className="text-[9px] text-center text-slate-400 font-medium uppercase tracking-tighter">
-                Sistema de Segurança Acertamed v2.0
+                Sistema de Segurança Sinal Agro v2.0
             </p>
         </form>
       </div>
