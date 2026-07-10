@@ -5,8 +5,8 @@ import fs from 'fs';
 async function generate() {
   try {
     const inputPath = path.resolve('src/assets/images/pwa_logo_512_1781625612996.jpg');
-    const out192 = path.resolve('public/launchericon-192x192.png');
-    const out512 = path.resolve('public/launchericon-512x512.png');
+    const out192 = path.resolve('public/pwa-icon-192.png');
+    const out512 = path.resolve('public/pwa-icon-512.png');
 
     console.log(`Lendo imagem fonte de: ${inputPath}`);
     if (!fs.existsSync(inputPath)) {
