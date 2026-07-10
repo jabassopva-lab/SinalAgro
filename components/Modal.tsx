@@ -248,7 +248,9 @@ const Modal: React.FC<ModalProps> = ({
                         <img 
                             src={showCustomImage ? customImage! : displayImageUrl} 
                             alt={sign.title} 
-                            className="max-h-full max-w-full object-contain drop-shadow-xl" 
+                            className="max-h-full max-w-full object-contain drop-shadow-xl pointer-events-none select-none" 
+                            draggable={false}
+                            onContextMenu={(e) => e.preventDefault()}
                             onError={() => setImgError(true)} 
                         />
                     )}

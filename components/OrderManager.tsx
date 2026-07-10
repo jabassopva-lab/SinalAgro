@@ -65,7 +65,7 @@ const OrderManager: React.FC<OrderManagerProps> = ({
                 .total-section { text-align: right; margin-top: 20px; padding-top: 10px; border-top: 2px solid #eee; }
                 .grand-total { font-size: 20px; font-weight: bold; color: #166534; }
                 .footer { text-align: center; margin-top: 40px; font-size: 10px; color: #999; border-top: 1px solid #eee; padding-top: 10px; }
-                .prod-img { width: 60px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px; background: #fff; }
+                .prod-img { width: 60px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px; background: #fff; pointer-events: none; -webkit-user-drag: none; user-select: none; }
                 .obs-block { margin-top: 20px; padding: 15px; background: #fffbeb; border: 1px solid #fef3c7; border-radius: 8px; }
             </style>
         </head>
@@ -100,7 +100,7 @@ const OrderManager: React.FC<OrderManagerProps> = ({
                 <tbody>
                     ${selectedOrder.items.map(item => `
                         <tr>
-                            <td><img src="${item.customImage || processGoogleDriveLink(item.sign.imageUrl)}" class="prod-img" /></td>
+                            <td><img src="${item.customImage || processGoogleDriveLink(item.sign.imageUrl)}" class="prod-img" oncontextmenu="return false;" draggable="false" /></td>
                             <td><strong>${item.sign.title}</strong><br>${item.size} | ${item.material}</td>
                             <td>${item.quantity}</td>
                             <td>${formatCurrency(item.unitPrice)}</td>
@@ -254,8 +254,8 @@ const OrderManager: React.FC<OrderManagerProps> = ({
                 <div className="space-y-3 mb-10">
                     {selectedOrder.items.map((item, idx) => (
                         <div key={idx} className="flex gap-4 border-2 border-slate-50 p-4 rounded-xl hover:border-blue-100 hover:bg-blue-50/20 transition-all group">
-                            <div className="w-20 h-20 bg-white rounded-lg flex-shrink-0 overflow-hidden border shadow-sm flex items-center justify-center p-1">
-                                <img src={item.customImage || processGoogleDriveLink(item.sign.imageUrl)} className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform" alt="Preview" />
+                            <div className="w-20 h-20 bg-white rounded-lg flex-shrink-0 overflow-hidden border shadow-sm flex items-center justify-center p-1 select-none">
+                                <img src={item.customImage || processGoogleDriveLink(item.sign.imageUrl)} className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform pointer-events-none select-none" draggable={false} onContextMenu={(e) => e.preventDefault()} alt="Preview" />
                             </div>
                             <div className="flex-1">
                                 <h5 className="font-black text-slate-800 text-sm uppercase leading-tight">{item.sign.title}</h5>

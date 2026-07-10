@@ -196,8 +196,9 @@ const SignCard: React.FC<SignCardProps> = ({
             <img 
               src={displayImageUrl} 
               alt={sign.title} 
-              className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 pointer-events-none" 
+              className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 pointer-events-none select-none" 
               draggable={false}
+              onContextMenu={(e) => e.preventDefault()}
               onError={() => setImageError(true)}
             />
         )}

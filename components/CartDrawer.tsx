@@ -135,7 +135,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
         return `
             <tr>
                 <td style="text-align: center; padding: 10px;">
-                    <img src="${imgSrc}" style="width: 80px; height: 80px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;" />
+                    <img src="${imgSrc}" oncontextmenu="return false;" draggable="false" style="width: 80px; height: 80px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px; pointer-events: none; -webkit-user-drag: none; user-select: none;" />
                 </td>
                 <td style="text-align: center; font-weight: bold; font-family: monospace;">${code}</td>
                 <td><strong>${i.sign.title}</strong><br/><small>${i.sign.category}</small></td>
@@ -293,8 +293,8 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
                             <div className="space-y-3">
                                 {cartItems.map(item => (
                                     <div key={item.id} className="flex gap-4 bg-white p-3 rounded-xl border border-slate-100 shadow-sm relative group">
-                                        <div className="w-16 h-16 bg-slate-100 rounded-lg overflow-hidden flex items-center justify-center border">
-                                            <img src={item.customImage || processGoogleDriveLink(item.sign.imageUrl)} className="max-w-full max-h-full object-contain pointer-events-none" alt="Preview" />
+                                        <div className="w-16 h-16 bg-slate-100 rounded-lg overflow-hidden flex items-center justify-center border select-none">
+                                            <img src={item.customImage || processGoogleDriveLink(item.sign.imageUrl)} className="max-w-full max-h-full object-contain pointer-events-none select-none" draggable={false} onContextMenu={(e) => e.preventDefault()} alt="Preview" />
                                         </div>
                                         <div className="flex-1 flex flex-col justify-center">
                                             <div className="flex justify-between">
