@@ -33,9 +33,13 @@ const Footer: React.FC<FooterProps> = ({ whatsappNumber = '5566992442998', store
         )}
 
         <p className="text-sm">&copy; {currentYear}. Todos os direitos reservados.</p>
-        <div className="mt-2 text-xs">
+        <div className="mt-2 text-xs flex items-center justify-center gap-3">
           <a href="/privacy.html" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-safety-yellow transition-colors underline decoration-dotted">
             Política de Privacidade
+          </a>
+          <span className="text-gray-700">•</span>
+          <a href="/delete-account.html" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-red-400 transition-colors underline decoration-dotted">
+            Excluir Conta/Dados
           </a>
         </div>
       </div>

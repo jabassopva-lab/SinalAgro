@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação de Exclusão de Conta e Dados - Sinal Agro</title>
+    <link rel="icon" type="image/png" href="/pwa-192.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Header / Nav -->
+    <header class="bg-emerald-950 text-white shadow-md border-b-4 border-yellow-500">
+        <div class="container mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <img src="/pwa-192.png" alt="Sinal Agro Logo" class="w-12 h-12 object-contain rounded-lg shadow-inner bg-white/10 p-1" />
+                <div>
+                    <h1 class="text-xl font-extrabold tracking-tight">Sinal Agro</h1>
+                    <p class="text-xs text-emerald-400">Comunicação Visual & Segurança do Trabalho</p>
+                </div>
+            </div>
+            <a href="/" class="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-emerald-950 font-bold text-sm rounded-lg transition-colors shadow">
+                Voltar para o Aplicativo
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-10 max-w-3xl">
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
+            <!-- Header Banner -->
+            <div class="bg-gradient-to-r from-red-800 to-emerald-900 px-6 py-10 sm:px-10 text-white">
+                <h2 class="text-3xl font-extrabold mb-2">Exclusão de Conta e Dados</h2>
+                <p class="text-red-100 text-sm">Direito à privacidade e controle total das suas informações pessoais no app Sinal Agro.</p>
+            </div>
+
+            <!-- Content Area -->
+            <div class="p-6 sm:p-10 space-y-8 text-slate-700 leading-relaxed text-sm sm:text-base">
+                
+                <section class="space-y-3">
+                    <p class="text-lg font-medium text-slate-900">
+                        Se você deseja encerrar a sua utilização do <strong>Sinal Agro</strong> e apagar todos os dados associados à sua identidade, nós garantimos um processo rápido, seguro e definitivo em total conformidade com a <strong>LGPD</strong> e os requisitos de privacidade da <strong>Google Play</strong>.
+                    </p>
+                </section>
+
+                <hr class="border-slate-100" />
+
+                <!-- Etapas de Exclusão -->
+                <section class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <span class="text-red-600">⚡</span> Como solicitar a exclusão de dados?
+                    </h3>
+                    <p>Você pode solicitar a exclusão total dos seus dados de duas formas simples:</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 mt-2">
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-bold text-emerald-800 bg-emerald-100 px-2 py-1 rounded">Método 1</span>
+                                <h4 class="font-bold text-slate-900 mt-2 mb-1">Via E-mail de Suporte</h4>
+                                <p class="text-xs text-slate-500">Envie uma mensagem simples a partir de sua conta de e-mail de cadastro.</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-200/60">
+                                <p class="text-xs text-slate-600">Enviar e-mail para:</p>
+                                <a href="mailto:jabasso.pva@gmail.com?subject=Exclusao%20de%20Conta%20-%20Sinal%20Agro" class="text-sm font-bold text-red-600 hover:underline">jabasso.pva@gmail.com</a>
+                                <p class="text-[10px] text-slate-400 mt-1">Assunto: "Exclusão de Dados - Sinal Agro"</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-bold text-emerald-800 bg-emerald-100 px-2 py-1 rounded">Método 2</span>
+                                <h4 class="font-bold text-slate-900 mt-2 mb-1">Formulário Direto</h4>
+                                <p class="text-xs text-slate-500">Preencha os dados e confirme a exclusão de maneira direta abaixo.</p>
+                            </div>
+                            <button onclick="openForm()" class="mt-4 w-full py-2 bg-red-600 hover:bg-red-500 text-white font-bold text-xs rounded transition-colors shadow-sm">
+                                Preencher Formulário
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Formulário Interativo Dinâmico -->
+                <section id="deletion-form-section" class="hidden bg-red-50/50 p-6 rounded-2xl border border-red-100 space-y-4">
+                    <h4 class="font-bold text-red-900 text-base">Formulário de Solicitação de Exclusão</h4>
+                    <p class="text-xs text-red-800">Insira suas informações abaixo para que possamos localizar os registros nas tabelas e efetuar a remoção.</p>
+                    
+                    <form onsubmit="handleSubmit(event)" class="space-y-3">
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nome Completo</label>
+                                <input id="form-name" type="text" required class="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-red-500 outline-none" placeholder="Ex: João Silva" />
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Telefone / WhatsApp</label>
+                                <input id="form-phone" type="tel" required class="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-red-500 outline-none" placeholder="Ex: (66) 99999-9999" />
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Chave de Assinante ou Código (Se houver)</label>
+                            <input id="form-key" type="text" class="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-red-500 outline-none" placeholder="Chave de acesso opcional" />
+                        </div>
+                        <div class="flex items-start gap-2 pt-2">
+                            <input type="checkbox" required id="form-agree" class="mt-1 rounded border-slate-300 text-red-600 focus:ring-red-500" />
+                            <label for="form-agree" class="text-xs text-slate-600">Confirmo que desejo apagar integral e definitivamente todas as minhas informações de pedidos, cadastro de assinante ou revendedor do Sinal Agro de forma irreversível.</label>
+                        </div>
+                        <button type="submit" class="w-full py-2.5 bg-red-700 hover:bg-red-600 text-white font-extrabold text-sm rounded-lg transition-colors shadow-md mt-2">
+                            Confirmar Envio da Solicitação
+                        </button>
+                    </form>
+                </section>
+
+                <script>
+                    function openForm() {
+                        const section = document.getElementById('deletion-form-section');
+                        section.classList.toggle('hidden');
+                        section.scrollIntoView({ behavior: 'smooth' });
+                    }
+
+                    function handleSubmit(e) {
+                        e.preventDefault();
+                        const name = document.getElementById('form-name').value;
+                        const phone = document.getElementById('form-phone').value;
+                        const key = document.getElementById('form-key').value;
+
+                        // Create email body and trigger client redirect
+                        const subject = encodeURIComponent("Solicitação de Exclusão de Conta - Sinal Agro");
+                        const body = encodeURIComponent(
+                            `Solicito a exclusão total da minha conta e de todos os meus dados associados no Sinal Agro.\n\n` +
+                            `Dados de Identificação:\n` +
+                            `- Nome: ${name}\n` +
+                            `- Telefone/Contato: ${phone}\n` +
+                            `- Chave de Acesso: ${key || "Não fornecida"}\n\n` +
+                            `Declaro estar ciente de que esta ação é permanente e irreversível.`
+                        );
+
+                        window.location.href = `mailto:jabasso.pva@gmail.com?subject=${subject}&body=${body}`;
+                        
+                        alert(
+                            "Solicitação preparada com sucesso!\n\n" +
+                            "O seu aplicativo de e-mail padrão foi aberto com o rascunho. Basta clicar em ENVIAR para formalizar a exclusão com nosso suporte técnico. Os dados serão excluídos em até 5 dias úteis."
+                        );
+                    }
+                </script>
+
+                <!-- Quais Dados São Deletados -->
+                <section class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <span class="text-red-600">🗑️</span> Quais tipos de dados são excluídos?
+                    </h3>
+                    <p>Ao processarmos o seu pedido de exclusão, as seguintes informações serão removidas <strong>definitivamente</strong> dos servidores em nuvem do Sinal Agro:</p>
+                    
+                    <div class="bg-slate-50 rounded-xl p-5 border border-slate-100">
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-2.5 text-sm">
+                                <span class="text-red-600 font-bold">✓</span>
+                                <div>
+                                    <strong class="text-slate-900">Histórico de Pedidos e Orçamentos:</strong> Todos os registros e layouts das placas que você enviou ou salvou em seu nome ou telefone.
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-2.5 text-sm">
+                                <span class="text-red-600 font-bold">✓</span>
+                                <div>
+                                    <strong class="text-slate-900">Credenciais e Contas de Assinantes:</strong> Chaves de acesso, créditos associados e as respectivas configurações de perfil.
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-2.5 text-sm">
+                                <span class="text-red-600 font-bold">✓</span>
+                                <div>
+                                    <strong class="text-slate-900">Perfis de Revendedores / Vendedores:</strong> Nome completo, dados de contato, cidade de atuação e chaves PIX cadastradas.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Retenção de Dados -->
+                <section class="space-y-3">
+                    <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <span class="text-emerald-700">🕒</span> Períodos de Retenção e Prazos
+                    </h3>
+                    <p class="text-sm text-slate-600">
+                        Após o envio da sua solicitação (via e-mail ou formulário), nossa equipe efetuará o expurgo completo dos registros nas tabelas do Supabase/Firebase em até <strong>5 dias úteis</strong>. 
+                        Nenhuma cópia residual ou backup histórico das suas informações privadas de pedidos é retida após a conclusão desse ciclo de eliminação.
+                    </p>
+                    <p class="text-sm text-slate-600">
+                        <strong>Dados de Armazenamento Local:</strong> Lembre-se que as placas montadas que ficam em rascunho no carrinho de compras ou nome da loja podem estar salvas localmente no cache do seu navegador (localStorage). Para apagá-las instantaneamente do seu próprio aparelho, basta acessar o menu do aplicativo e utilizar o botão de limpar dados/carrinho ou limpar os dados de navegação do seu dispositivo.
+                    </p>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-xs sm:text-sm border-t border-slate-800 mt-auto">
+        <div class="container mx-auto px-4 space-y-2">
+            <p class="font-semibold text-slate-300">Sinal Agro &copy; 2026. Todos os direitos reservados.</p>
+            <p>Se tiver qualquer dúvida, entre em contato diretamente pelo e-mail: <span class="text-yellow-500 font-medium">jabasso.pva@gmail.com</span></p>
+        </div>
+    </footer>
+
+</body>
+</html>
