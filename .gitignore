@@ -1,0 +1,8 @@
+node_modules
+dist
+.env
+.env.local
+
+# Ignore the generated PNG icons so they don't get committed/corrupted in Git
+public/launchericon-192x192.png
+public/launchericon-512x512.png
