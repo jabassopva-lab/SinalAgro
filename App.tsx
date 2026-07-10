@@ -48,7 +48,14 @@ function App() {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [pendingCatalogDownload, setPendingCatalogDownload] = useState(false);
   
-  const [subscribers, setSubscribers] = useState<Subscriber[]>([]);
+  const [subscribers, setSubscribers] = useState<Subscriber[]>(() => {
+    const saved = localStorage.getItem('app_subscribers_list');
+    try {
+      return saved ? JSON.parse(saved) : [];
+    } catch (e) {
+      return [];
+    }
+  });
   const [currentSubscriber, setCurrentSubscriber] = useState<Subscriber | null>(null);
   const [selectedSign, setSelectedSign] = useState<Sign | null>(null);
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
@@ -61,7 +68,14 @@ function App() {
   const [isCatalogViewerOpen, setIsCatalogViewerOpen] = useState(false);
   const [generatedCode, setGeneratedCode] = useState('');
   
-  const [orders, setOrders] = useState<Order[]>([]);
+  const [orders, setOrders] = useState<Order[]>(() => {
+    const saved = localStorage.getItem('app_orders_list');
+    try {
+      return saved ? JSON.parse(saved) : [];
+    } catch (e) {
+      return [];
+    }
+  });
   const [reseller, setReseller] = useState<string | undefined>(undefined);
   
   const [storeName, setStoreName] = useState(() => localStorage.getItem('app_store_name') || APP_CONFIG.storeName);
@@ -108,6 +122,14 @@ function App() {
   useEffect(() => {
     localStorage.setItem('app_signs_data', JSON.stringify(signs));
   }, [signs]);
+
+  useEffect(() => {
+    localStorage.setItem('app_orders_list', JSON.stringify(orders));
+  }, [orders]);
+
+  useEffect(() => {
+    localStorage.setItem('app_subscribers_list', JSON.stringify(subscribers));
+  }, [subscribers]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);

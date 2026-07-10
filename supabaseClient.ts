@@ -65,10 +65,10 @@ const handleSupabaseError = (error: any, context: string) => {
         ));
 
     if (isTableOrPermissionError) {
-        console.error(`🚀 ERRO: Tabela ou permissão ausente no Supabase em [${context}].`);
+        console.warn(`[Supabase Setup Info] Tabela ou permissão pendente de configuração em [${context}].`);
         window.dispatchEvent(new CustomEvent('supabase_table_missing', { detail: { context, error } }));
     } else {
-        console.error(`SUPABASE ERROR [${context}]:`, error);
+        console.warn(`[Supabase Connection Alert] Falha ao sincronizar [${context}]:`, errorMessage || error);
     }
 };
 
