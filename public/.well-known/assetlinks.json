@@ -5,9 +5,9 @@
     ],
     "target": {
       "namespace": "android_app",
-      "package_name": "COLOQUE_AQUI_O_SEU_PACKAGE_NAME",
+      "package_name": "com.sinalagro",
       "sha256_cert_fingerprints": [
-        "COLOQUE_AQUI_A_SUA_ASSINATURA_SHA256"
+        "EB:1B:78:0A:0B:2A:97:40:BD:35:55:4C:47:39:D0:BD:8B:84:54:60:C4:E7:3D:BC:83:F9:53:07:05:64:BB:4E"
       ]
     }
   }
