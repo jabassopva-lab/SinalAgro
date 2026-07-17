@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sinal-agro-cache-v1';
+const CACHE_NAME = 'sinal-agro-cache-v2';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
@@ -21,6 +21,7 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
           if (cacheName !== CACHE_NAME) {
+            console.log('Deleting old cache:', cacheName);
             return caches.delete(cacheName);
           }
         })
@@ -30,14 +31,10 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  // Strategy: Network First, falling back to cache
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(event.request).catch(() => {
-        // Return cached page when offline (fallbacks can be added if needed)
-      });
+    fetch(event.request).catch(() => {
+      return caches.match(event.request);
     })
   );
 });
